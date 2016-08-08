@@ -26,14 +26,12 @@ Extra
 * 如果只需要内网ip扫描，将程序（net_scan.py）最后几行注释：
 
 
-
-
-    #     batchScan = batch_scan(success_list)
-    #     batchScan.getList()
-    #     batchScan.run()
-    #     dirScan_path = str(time.strftime('%Y%m%d%H%M%S',time.localtime(time.time())))+'_'+str(ip_lists[0])+'_dir.txt'
-    #     for url in batchScan.successList:
-    #         saveFile(url,dirScan_path)
-    #     print 'finished.....'
+    batchScan = batch_scan(success_list)
+    batchScan.getList()
+    batchScan.run()
+    dirScan_path = str(time.strftime('%Y%m%d%H%M%S',time.localtime(time.time())))+'_'+str(ip_lists[0])+'_dir.txt'
+    for url in batchScan.successList:
+        saveFile(url,dirScan_path)
+    print 'finished.....'
 
 代码写得不好，只实现具体功能~
