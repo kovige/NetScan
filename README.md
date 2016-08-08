@@ -17,6 +17,10 @@ Example
 本机：python reGeorgSocksProxy.py -p 1234 -u http://xx.com/tunnel.jsp
 
 **net_scan:**
+程序（net_scan.py）中代理ip和端口设置：
+SOCKS_PROXY_HOST = '127.0.0.1'
+SOCKS_PROXY_PORT = 1234
+运行：
 python net_scan.py --ip 192.168.10.0/24
 
 
