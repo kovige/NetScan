@@ -103,8 +103,8 @@ class batch_scan(object):
         for t in threads:
             t.start()  
  
-        t.join()
-        time.sleep(self.threads_num)
+        for t in threads:
+            t.join()
     
                 
 

@@ -54,8 +54,9 @@ def run():
     for t in threads:
         t.start()  
  
-    t.join()
-    time.sleep(threads_num/2)
+    for t in threads:
+        t.join()
+
 
 def parse_args():
     parser = argparse.ArgumentParser(description="A tool to scan local network")
@@ -94,12 +95,12 @@ if __name__ == '__main__':
     run()
     for ip in success_list:
         saveFile(ip, save_path)
-    batchScan = batch_scan(success_list)
-    batchScan.getList()
-    batchScan.run()
-    dirScan_path = str(time.strftime('%Y%m%d%H%M%S',time.localtime(time.time())))+'_'+str(ip_lists[0])+'_dir.txt'
-    for url in batchScan.successList:
-        saveFile(url,dirScan_path)
+#     batchScan = batch_scan(success_list)
+#     batchScan.getList()
+#     batchScan.run()
+#     dirScan_path = str(time.strftime('%Y%m%d%H%M%S',time.localtime(time.time())))+'_'+str(ip_lists[0])+'_dir.txt'
+#     for url in batchScan.successList:
+#         saveFile(url,dirScan_path)
     print 'finished.....'
         
     
